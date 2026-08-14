@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Directorio · Ayuda Terremoto Colombia 2026</title>
+
+  <meta name="description"
+    content="Directorio unificado de sitios web creados por la comunidad para coordinar ayuda tras el terremoto de Colombia del 10 de agosto de 2026.">
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+  <a href="#main" class="skip-link">
+    Saltar al contenido
+  </a>
+
+  <header class="top">
+    <div class="top-inner">
+
+      <span class="eyebrow">
+        <span class="pulse" aria-hidden="true"></span>
+        Actualizado manualmente · verifica cada sitio
+      </span>
+
+      <h1>Directorio de ayuda tras el terremoto</h1>
+
+      <p class="lede">
+        El 10 de agosto de 2026 un sismo de magnitud 7.4 con epicentro
+        en San José del Palmar (Chocó) afectó varias comunidades y ciudades cercanas.
+        Decenas de desarrolladores han lanzado sitios independientes para conectar
+        necesidades y ofrecimientos de ayuda. Esta página reúne algunos de
+        esos sitios en un solo lugar.
+      </p>
+
+      <p class="meta-row">
+        9 sitios listados · Este directorio no reemplaza a Cruz Roja,
+        Bomberos ni UNGRD — es un puente entre iniciativas ciudadanas.
+      </p>
+
+    </div>
+  </header>
+
+  <main id="main">
+
+    <div class="why">
+      <strong>Por qué existe esta página:</strong>
+      la información sobre a quién ayudar y quién ofrece ayuda está
+      repartida en muchas apps distintas, cada una con su propia ciudad
+      o alcance. En vez de esperar a que se unifiquen, este directorio
+      apunta a todas ellas para que sea más fácil encontrar la correcta
+      según tu ciudad o necesidad.
+    </div>
+
+    <div class="controls">
+
+      <input type="text" class="search" id="search" placeholder="Buscar por nombre, ciudad o descripción…"
+        aria-label="Buscar sitios de ayuda">
+
+    </div>
+
+    <p class="count-line" id="countLine" aria-live="polite"></p>
+
+    <div class="grid" id="grid"></div>
+
+    <div class="empty" id="empty" hidden>
+      No hay sitios que coincidan con esa búsqueda.
+      Prueba con otra palabra.
+    </div>
+
+    <div class="add-site">
+
+      <h2>¿Conoces otro sitio activo?</h2>
+
+      <p>
+        Este directorio es un archivo estático y editable a propósito.
+        Para añadir un sitio, edita el arreglo
+        <code>SITES</code> dentro del archivo
+        <code>data.js</code> y vuelve a publicarlo.
+      </p>
+
+    </div>
+
+  </main>
+
+  <footer>
+
+    Directorio comunitario, sin afiliación oficial.
+    La disponibilidad y exactitud de cada sitio depende de sus
+    propios creadores.
+
+  </footer>
+
+  <script type="module" src="script.js"></script>
+
+</body>
+
+</html>
