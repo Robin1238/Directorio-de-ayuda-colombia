@@ -2,7 +2,8 @@ import { SITES } from "./data.js";
 
 const TYPE_LABEL = {
   map: "Mapa",
-  needs: "Reporta necesidad",
+  needs: "Solicitar ayuda",
+  pets: "Mascotas",
   offers: "Ofrecer ayuda",
   directory: "Directorio",
 };
@@ -25,23 +26,35 @@ function showSites() {
     ).toLowerCase();
 
     return searchTetx === "" || siteText.includes(searchTetx);
-  });
+  }).sort((a, b) => Number(b.official) - Number(a.official));
 
   grid.innerHTML = "";
 
   sitesFound.forEach((site) => {
-    const card = document.createElement("div");
-    card.className = "card";
+    const card = document.createElement("a");
+    card.className = `card${site.official ? " official" : ""}`;
+    card.href = site.url;
+    card.target = "_blank";
+    card.rel = "noopener noreferrer";
 
     const cities = site.cities
       .map((city) => `<span class="tag city">${city}</span>`)
       .join("");
 
-    const types = site.types
-      .map((type) => `<span class="tag type-${type}">${TYPE_LABEL[type]}</span>`)
+    const types = (site.types ?? [])
+      .map((type) => {
+        const label = TYPE_LABEL[type] ?? type;
+        return `<span class="tag type">${label}</span>`;
+      })
       .join("");
 
     card.innerHTML = `
+      ${
+        site.official
+          ? `<span class="source-badge">Fuente oficial</span>`
+          : `<span class="source-badge community">Iniciativa comunitaria</span>`
+      }
+
       <h3>${site.name}</h3>
 
       <p class="desc">${site.desc}</p>
@@ -56,14 +69,11 @@ function showSites() {
           ${site.url.replace(/^https?:\/\//, "")}
         </span>
 
-        <a
-          class="visit"
-          href="${site.url}"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Visitar ↗
-        </a>
+
+      <span class="visit">
+        Visitar ↗
+      </span>
+
       </div>
     `;
 

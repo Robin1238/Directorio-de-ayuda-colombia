@@ -187,6 +187,30 @@ main {
   }
 }
 
+.card.official {
+  border-width: 2px;
+  border-color: #c8d8ce;
+}
+
+.source-badge {
+  align-self: flex-start;
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  color: #356348;
+  background: #edf5ef;
+  border: 2px solid #d5e6da;
+  padding: 3px 7px;
+  border-radius: 5px;
+  margin-bottom: 1px;
+}
+
+.source-badge.community {
+  color: #808669;
+  background: #ffffe0;
+  border-color: #e3e1da;
+}
+
 .card {
   background: var(--paper-raised);
   border: 1px solid var(--line);
@@ -195,6 +219,13 @@ main {
   display: flex;
   flex-direction: column;
   gap: 8px;
+  color: var(--ink);
+  text-decoration: none;
+  cursor: pointer;
+  transition:
+    border-color 0.15s ease,
+    box-shadow 0.15s ease,
+    transform 0.15s ease;
 }
 
 .card h3 {
@@ -225,28 +256,13 @@ main {
 }
 
 .tag.city {
-  background: #e7e9f0;
-  color: var(--ink);
-}
-
-.tag.type-mapa {
-  background: #e3ecfb;
-  color: #1e4c8f;
-}
-
-.tag.type-necesita {
-  background: var(--coral-soft);
-  color: var(--coral);
-}
-
-.tag.type-ofrece {
-  background: var(--green-soft);
+  background: #e8fff3;
   color: var(--green);
 }
 
-.tag.type-directorio {
-  background: var(--amber-soft);
-  color: #8a5600;
+.tag.type {
+  background: #e3ecfb;
+  color: #1e4c8f;
 }
 
 .card-foot {
@@ -256,23 +272,6 @@ main {
   justify-content: space-between;
   align-items: center;
   gap: 10px;
-}
-
-.visit {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  font-size: 13.5px;
-  font-weight: 700;
-  text-decoration: none;
-  background: var(--ink);
-  color: #fff;
-  padding: 8px 14px;
-  border-radius: 8px;
-}
-
-.visit:hover {
-  background: #12203b;
 }
 
 .url-hint {
