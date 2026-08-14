@@ -2,8 +2,8 @@ import { SITES } from "./data.js";
 
 const TYPE_LABEL = {
   map: "Mapa",
-  needs: "Solicitar ayuda",
   pets: "Mascotas",
+  needs: "Solicitar ayuda",
   offers: "Ofrecer ayuda",
   directory: "Directorio",
 };
